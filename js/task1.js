@@ -1,7 +1,11 @@
-// const listItems = categories.children;
-// console.log(listItems);
+const listItems = categories.children;
+console.log(`In the list ${listItems.length} categories`);
 
-// const titleRef = document.querySelectorAll('h2')
-// const arrayTitleRef = titleRef;
-// arrayTitleRef.forEach(element => console.log('Category:', element));
+// =================
+for (let elem of listItems) {
+    let category = elem.firstElementChild.textContent;   
+    let quantityElem = elem.lastElementChild.children.length;
+    console.log(`Category: ${category} \nQuantity: ${quantityElem}`);
+};
+
 
