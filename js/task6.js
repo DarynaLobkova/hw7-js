@@ -20,12 +20,35 @@
 //   border-color: #f44336;
 // }
 
-const inputRef = document.querySelector('#validation-input')
-const inputRefValid = document.querySelector('valid')
-const inputRefInvalid = document.querySelector('invalid')
+const inputRef = document.querySelector("#validation-input");
 
-inputRef.addEventListener('blur',handleInputBlur) 
+const validPassword = (e) => {
+    if (Number(inputRef.dataset.length) === e.currentTarget.value.length) {
+        inputRef.classList.add('valid')
+        inputRef.classList.remove('invalid')
 
-function handleInputBlur(e) {
+    } else {
+        inputRef.classList.add('invalid')
+        inputRef.classList.remove('valid')
+
+    }
+};
     
-}
+// inputRef.addEventListener("blur",validPassword);
+    
+// const inputRef = document.querySelector("#validation-input");
+// const addRemovePassword = (remove, add) => {
+//   inputRef.classList.remove(`${remove}`);
+//   inputRef.classList.add(`${add}`);
+// };
+
+// const validPassword = (e) => {
+//   if (Number(inputRef.dataset.length) === e.currentTarget.value.length) {
+//     addRemovePassword("invalid", "valid");
+//   } else {
+//     addRemovePassword("valid", "invalid");
+//   }
+// };
+
+// inputRef.addEventListener("blur", validPassword);
+
